@@ -1,0 +1,18 @@
+{% extends "homepage/base.html" %}
+
+{% block content %}
+<div class="jumbotron mt-5">
+    <h1 class="display-4">Bienvenue sur AgriApp !</h1>
+    <p class="lead">La plateforme dédiée à l'amélioration des pratiques agricoles grâce à la data.</p>
+    {% if user.is_authenticated %}
+        <hr class="my-4">
+        <p>Bonjour, {{ user.username }}! Prêt à explorer vos données agricoles ?</p>
+        <a href="{% url 'agri_data:inscription_agriculteur' %}" class="btn btn-primary">Compléter Mon Profil</a>
+    {% else %}
+        <hr class="my-4">
+        <p>Rejoignez notre communauté pour commencer à analyser et prédire les tendances agricoles.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Inscription</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'login' %}" role="button">Connexion</a>
+    {% endif %}
+</div>
+{% endblock %}

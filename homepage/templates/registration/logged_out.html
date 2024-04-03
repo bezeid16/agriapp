@@ -1,0 +1,12 @@
+{% extends "homepage/base.html" %}
+
+{% block content %}
+<div class="container text-center">
+  <div class="alert alert-success mt-5" role="alert">
+    <h4 class="alert-heading">Déconnexion réussie!</h4>
+    <p>Vous avez été déconnecté avec succès.</p>
+    <hr>
+    <p class="mb-0">Merci d'avoir utilisé notre application. <a href="{% url 'login' %}" class="alert-link">Cliquez ici</a> pour vous reconnecter.</p>
+  </div>
+</div>
+{% endblock %}
