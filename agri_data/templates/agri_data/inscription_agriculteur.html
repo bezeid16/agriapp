@@ -7,4 +7,11 @@
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Soumettre</button>
     </form>
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>Erreurs dans le formulaire :</strong>
+        {{ form.errors }}
+    </div>
+    {% endif %}
+
 {% endblock %}

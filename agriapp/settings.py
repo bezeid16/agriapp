@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middlewares.post_login_redirect_middleware.PostLoginRedirectMiddleware',
+
 ]
 
 ROOT_URLCONF = 'agriapp.urls'
@@ -69,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'agriapp.wsgi.application'
+ASGI_APPLICATION = 'agriapp.asgi.application'
 
 
 # Database

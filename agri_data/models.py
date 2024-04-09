@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 
 class ProfilAgriculteur(models.Model):
-    utilisateur = models.OneToOneField(User, on_delete=models.CASCADE)
+    utilisateur = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     region = models.CharField(max_length=100)
     espace_travail = models.FloatField()  # en hectares, par exemple
     nombre_employes = models.IntegerField()
