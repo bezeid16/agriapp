@@ -1,55 +1,84 @@
 {% extends "homepage/base.html" %}
-
+{% load static %}
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <!-- Carte pour les Modèles de Machine Learning -->
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img src="url_to_ml_image" class="card-img-top" alt="Machine Learning">
-                <div class="card-body">
-                    <h5 class="card-title">Modèles de Machine Learning</h5>
-                    <p class="card-text">Découvrez les prédictions pour optimiser vos récoltes.</p>
-                    <a href="#" class="btn btn-primary">Explorer</a>
-                </div>
-            </div>
-        </div>
+<div style="background-color: #2ecc71; padding: 50px; text-align: center">
 
-        <!-- Carte pour la Visualisation des Données -->
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img src="url_to_data_viz_image" class="card-img-top" alt="Data Visualization">
-                <div class="card-body">
-                    <h5 class="card-title">Visualisation des Données</h5>
-                    <p class="card-text">Visualisez vos données pour prendre des décisions éclairées.</p>
-                    <a href="#" class="btn btn-primary">Visualiser</a>
-                </div>
-            </div>
+    <a href="" target="_blank"> <!-- Replace the href with your desired link -->
+      <img
+        src="{% static 'agrilogo.png' %}"
+        alt="Logo ANSADE"
+        style="width: 200px; height: auto; margin-bottom: 20px"
+      />
+    </a> 
+  
+    <h1>Bienvenue sur Agrinovators app</h1>
+    <p class="h6">
+      Aggrinnovators, plateforme visant a fournir aux agriculteurs des outils et des solutions numériques pour les aider
+       à maximiser leur productivité, et optimiser leurs pratiques agricoles.
+    </p>
+    <h2 class="pb-3">Nos Fonctionnalités</h2>
+    <div class="d-flex justify-content-center">
+      <div class="card text-center" style="width: 18rem">
+        <div class="card-body">
+          <img
+            src="{% static 'fonct1.png' %}"
+            alt="Your Logo"
+            class="pb-3"
+            width="100px"
+          />
+          <h5 class="card-title pb-3">Modèles de Machine Learning</h5>
+          <a href="{% url 'home'%}" class="btn btn-success"
+            >Explorer</a
+          >
         </div>
-
-        <!-- Carte pour la Simulation -->
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img src="url_to_simulation_image" class="card-img-top" alt="Simulation">
-                <div class="card-body">
-                    <h5 class="card-title">Simulation</h5>
-                    <p class="card-text">Simulez différents scénarios pour votre exploitation.</p>
-                    <a href="#" class="btn btn-primary">Simuler</a>
-                </div>
-            </div>
+      </div>
+      <div class="card text-center ms-3" style="width: 18rem">
+        <div class="card-body">
+          <img
+            src="{% static 'fonct3.png' %}"
+            alt="Your Logo"
+            class="pb-3"
+            width="100px"
+          />
+  
+          <h5 class="card-title pb-3">Visualisation des Données</h5>
+          <a href="{% url 'home' %}" class="btn btn-success"
+            >Visualiser</a
+          >
         </div>
-
-        <!-- Carte pour le Chatbot -->
-        <div class="col-md-4 mt-4">
-            <div class="card" style="width: 18rem;">
-                <img src="url_to_chatbot_image" class="card-img-top" alt="Chatbot">
-                <div class="card-body">
-                    <h5 class="card-title">Chatbot</h5>
-                    <p class="card-text">Posez vos questions et obtenez des réponses instantanées.</p>
-                    <a href="#" class="btn btn-primary">Discuter</a>
-                </div>
-            </div>
+      </div>
+      <div class="card text-center ms-3" style="width: 18rem">
+        <div class="card-body">
+          <img
+            src="{% static 'fonct2.png' %}"
+            alt="Your Logo"
+            class="pb-3"
+            width="100px"
+          />
+  
+          <h5 class="card-title pb-3">Simulez différents scénarios pour votre exploitation.</h5>
+          <a href="{%url 'home'%}" class="btn btn-success"
+            >simuler</a
+          >
         </div>
+      </div>
+      <div class="card text-center ms-3" style="width: 18rem">
+        <div class="card-body">
+          <img
+            src="{% static 'fonct4.png' %}"
+            alt="Your Logo"
+            class="pb-3"
+            width="100px"
+          />
+  
+          <h5 class="card-title pb-3">Chatbot</h5>
+          <a href="{%url 'home'%}" class="btn btn-success"
+            >Discuter</a
+          >
+        </div>
+      </div>
     </div>
-</div>
-{% endblock %}
+  </div>
+  
+  {% endblock %}
+  
