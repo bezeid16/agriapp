@@ -1,7 +1,7 @@
 {% extends "homepage/base.html" %}
 {% load static %}
 {% block content %}
-<div style="background-color: #2ecc71; padding: 50px; text-align: center">
+<div style="background: url('{% static 'agri.jpg' %}') no-repeat center center; background-size: cover; padding: 50px; text-align: center">
 
     <a href="" target="_blank"> <!-- Replace the href with your desired link -->
       <img
@@ -11,14 +11,14 @@
       />
     </a> 
   
-    <h1>Bienvenue sur Agrinovators app</h1>
-    <p class="h6">
+    <h1 style="color: #fff;">Bienvenue sur Agrinovators app</h1>
+    <p class="h6" style="color: #fff;">
       Aggrinnovators, plateforme visant a fournir aux agriculteurs des outils et des solutions numériques pour les aider
        à maximiser leur productivité, et optimiser leurs pratiques agricoles.
     </p>
-    <h2 class="pb-3">Nos Fonctionnalités</h2>
+    <h2 class="pb-3" style="color: #fff;">Nos Fonctionnalités</h2>
     <div class="d-flex justify-content-center">
-      <div class="card text-center" style="width: 18rem">
+      <div class="card text-center" style="width: 18rem" >
         <div class="card-body">
           <img
             src="{% static 'fonct1.png' %}"
