@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage',
-    'agri_data'
+    'agri_data',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,7 +81,7 @@ ASGI_APPLICATION = 'agriapp.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'agri_data',
+        'NAME': 'agrinnovators_data',
         'USER': 'root',
         'PASSWORD' : '',
     }
@@ -132,6 +133,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+ 
+# Set the default auto field type for models
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
+
+
+ 

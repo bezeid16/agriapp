@@ -1,11 +1,11 @@
-from django.db import models
+""""from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
 
 class ProfilAgriculteur(models.Model):
     utilisateur = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     region = models.CharField(max_length=100)
-    espace_travail = models.FloatField()  # en hectares, par exemple
+    espace_travail = models.FloatField()  
     nombre_employes = models.IntegerField()
     qualite_sol = models.CharField(max_length=100)
     budget = models.DecimalField(max_digits=10, decimal_places=2)
@@ -24,3 +24,24 @@ class DonneesCapteur(models.Model):
 
     def __str__(self):
         return f"{self.date_heure} - {self.agriculteur}"
+"""
+
+from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
+
+class ProfilAgriculteur(models.Model):
+    utilisateur = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    region = models.CharField(max_length=100)
+    espace_travail = models.FloatField(null=True)  # Allowing NULL values
+    nombre_employes = models.IntegerField(null=True)  # Allowing NULL values
+    qualite_sol = models.CharField(max_length=100)
+    budget = models.DecimalField(max_digits=10, decimal_places=2,null =True)
+    produits = models.CharField(max_length=255)
+    periode_travail = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.utilisateur.username
+
+ 
+

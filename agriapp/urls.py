@@ -7,5 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),  # Ajoutez cette ligne
     path('agri_data/', include('agri_data.urls')),
-
 ]

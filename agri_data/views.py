@@ -1,3 +1,4 @@
+"""
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -23,3 +24,29 @@ def inscription_agriculteur(request):
 def soumettre_donnees(request):
     return render(request, 'agri_data/services.html')  # Assurez-vous que l'URL est correctement nommée dans vos fichiers urls.py
 
+"""
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import ProfilAgriculteur
+from .forms import ProfilAgriculteurForm
+
+@login_required
+def inscription_agriculteur(request):
+    profil_agriculteur, created = ProfilAgriculteur.objects.get_or_create(utilisateur=request.user)
+    if request.method == 'POST':
+        form = ProfilAgriculteurForm(request.POST, instance=profil_agriculteur)
+        if form.is_valid():
+            if form.cleaned_data['espace_travail'] is not None:
+                form.save()
+                return redirect('agri_data:services')
+            else:
+                messages.error(request, 'The workspace area cannot be empty.')
+    else:
+        form = ProfilAgriculteurForm(instance=profil_agriculteur)
+
+    return render(request, 'agri_data/inscription_agriculteur.html', {'form': form})
+
+def soumettre_donnees(request):
+    return render(request, 'agri_data/services.html')
