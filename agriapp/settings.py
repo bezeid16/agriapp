@@ -81,7 +81,7 @@ ASGI_APPLICATION = 'agriapp.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'agrinnovators_data',
+        'NAME': 'agri_data',
         'USER': 'root',
         'PASSWORD' : '',
     }
