@@ -1,2 +1,2 @@
 # agriapp
-Our New successful Project Inshallah
+a django app that facilitates farmers life using AI technologies
